@@ -1,0 +1,5 @@
+<ul>
+    {% for post in posts %}
+    <li><a href="{{ app.request.baseUrl ~ '/blog/' ~ post.slug }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
