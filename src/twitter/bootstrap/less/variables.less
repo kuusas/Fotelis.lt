@@ -1,0 +1,49 @@
+// Grays
+// -------------------------
+@black:                 #23272e;
+@grayDarker:            lighten(@black, 5%);
+@grayDark:              lighten(@black, 10%);
+@gray:                  lighten(@black, 15%);
+@grayLight:             lighten(@black, 40%);
+@grayLighter:           lighten(@black, 70%);
+@white:                 lighten(@black, 90%);
+
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Links
+// -------------------------
+@linkColor:             #3b4b6e;
+@linkColorHover:        lighten(@linkColor, 15%);
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Palatino, Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          14px;
+@baseFontFamily:        @serifFontFamily;
+@baseLineHeight:        20px;
+@altFontFamily:         @sansFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+// Navbar
+// -------------------------
+@navbarHeight:                    60px;
+@navbarBackgroundHighlight:       @grayLighter;
+@navbarText:                      #000;
+@navbarLinkColor:                 #000;
