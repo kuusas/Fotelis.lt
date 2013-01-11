@@ -5,8 +5,21 @@ class PostService
 {
     protected $data = array();
 
+    public function sortByDate()
+    {
+        $column = array();
+        foreach ($this->data as $key => $item) {
+            $column[$key] = $item->getDate();
+        }
+
+        array_multisort($column, SORT_DESC, $this->data);
+    }
+
     public function add($slug, $params)
     {
+        if (is_dir($slug)) {
+            $slug = $this->getSlugFromDir($slug);
+        }
         $this->data[$slug] = new PostEntity($slug, $params);
     }
 
@@ -19,6 +32,7 @@ class PostService
 
     public function getAll()
     {
+        $this->sortByDate();
         return $this->data;
     }
 
@@ -84,5 +98,19 @@ class PostService
         }
 
         return $return;
+    }
+
+    public function getSlugFromDir($dir)
+    {
+        $r = null;
+        $pos = strrpos($dir, '/');
+        
+        if ($pos) {
+            $r = substr($dir,  $pos + 1);
+        } else {
+            throw new Exception(sprintf('Can not load slug from dir %s', $dir));
+        }
+
+        return $r;
     }
 }
