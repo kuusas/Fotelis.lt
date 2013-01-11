@@ -1,5 +1,27 @@
-<ul>
-    {% for post in posts %}
-    <li><a href="{{ app.request.baseUrl ~ '/blog/' ~ post.slug }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<div class="span4">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            {% for item in categories %}
+            <li{% if item.slug == categorySlug %} class="active"{% endif %}><a href="{{ app.request.baseUrl ~ '/' ~ item.slug }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div><!--/.well -->
+</div><!--/span-->
+<div class="span8">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            {% if posts|length > 0 %}
+                {% for item in posts %}
+                <li{% if item.slug == postSlug %} class="active"{% endif %}>
+                    <a href="{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}" title="{{ item.name }}">
+                        {{ item.name }}
+                        <small class="pull-right">{{ item.date }}</small>
+                    </a>
+                </li>
+                {% endfor %}
+            {% else %}
+                <li>Įrašų nėra</li>
+            {% endif %}
+        </ul>
+    </div><!--/.well -->
+</div><!--/span-->

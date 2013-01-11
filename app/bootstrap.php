@@ -13,20 +13,108 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['armchair.post'] = $app->share(function() {
     $obj = new Armchair\PostService();
-    $obj->load(__DIR__ . '/posts');
+    $obj->load(array(
+        __DIR__ . '/posts'
+    ));
+
+    return $obj;
+});
+
+$app['armchair.category'] = $app->share(function() use ($app) {
+    $obj = new Armchair\CategoryService($app['request']);
 
     return $obj;
 });
 
 // actions
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html');
+    return $app['twig']->render('index.html', array(
+        'categorySlug' => 'none',
+        'postSlug' => 'none',
+        'pageSlug' => ' ',
+    ));
 });
 
-$app->get('/blog/{slug}', function ($slug) use ($app) {
+// menu
+$app->get('/menu/{pageSlug}', function($pageSlug) use ($app){
+    $menu = array(
+        array(
+            'name' => 'Pradžia',
+            'slug' => ' ',
+        ),
+        array(
+            'name' => 'Apie',
+            'slug' => 'apie',
+        ),
+        array(
+            'name' => 'Kontaktai',
+            'slug' => 'kontaktai',
+        ),
+    );
+    return $app['twig']->render('menu.html', array(
+        'menu' => $menu,
+        'pageSlug' => $pageSlug,
+    ));
+});
+
+
+$app->get('/list/{categorySlug}', function ($categorySlug) use ($app) {
+    $postService = $app['armchair.post'];
+
+    if ($categorySlug == 'none') {
+        $posts = $postService->getAll();
+    } else {
+        $posts = $postService->getAllByCategory($categorySlug);
+    }
+
+    return $app['twig']->render('list.html', array(
+        'posts' => $posts,
+    ));
+});
+
+// sidebar
+$app->get('/sidebar/{categorySlug}/{postSlug}', function($categorySlug, $postSlug) use ($app){
+    $postService = $app['armchair.post'];
+    $categoryService = $app['armchair.category'];
+
+    if ($categorySlug == 'none') {
+        $posts = $postService->getAll();
+    } else {
+        $posts = $postService->getAllByCategory($categorySlug);
+    }
+    $categories = $categoryService->getAll();
+
+    return $app['twig']->render('sidebar.html', array(
+        'posts'=> $posts,
+        'categories' => $categories,
+        'categorySlug' => $categorySlug,
+        'postSlug' => $postSlug,
+        'pageSlug' => 'none',
+    ));
+});
+
+// static pages
+$app->get('/apie', function() use ($app){
+    return $app['twig']->render('static/apie.html', array(
+        'categorySlug' => 'none',
+        'postSlug' => 'none',
+        'pageSlug' => 'apie',
+    ));
+});
+
+$app->get('/kontaktai', function() use ($app){
+    return $app['twig']->render('static/kontaktai.html', array(
+        'categorySlug' => 'none',
+        'postSlug' => 'none',
+        'pageSlug' => 'kontaktai',
+    ));
+});
+
+// blog entry
+$app->get('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) use ($app) {
     $service = $app['armchair.post'];
 
-    $post = $service->get($slug);
+    $post = $service->get($postSlug);
 
     if (!$post) {
         throw new Exception('Post does not exist');
@@ -34,31 +122,23 @@ $app->get('/blog/{slug}', function ($slug) use ($app) {
 
     return $app['twig']->render('post.html', array(
         'post' => $post,
+        'categorySlug' => $categorySlug,
+        'postSlug' => $postSlug,
+        'pageSlug' => 'none',
     ));
 });
 
-$app->get('/menu', function() use ($app){
-    return $app['twig']->render('menu.html');
-});
-
-$app->get('/sidebar', function() use ($app){
+// blog category
+$app->get('/{categorySlug}', function ($categorySlug) use ($app) {
     $service = $app['armchair.post'];
 
-    $data = $service->getAll();
-
-    return $app['twig']->render('sidebar.html', array(
-        'posts'=> $data
+    return $app['twig']->render('index.html', array(
+        'categorySlug' => $categorySlug,
+        'postSlug' => 'none',
+        'pageSlug' => 'none',
     ));
 });
 
-// static pages
-$app->get('/apie', function() use ($app){
-    return $app['twig']->render('static/apie.html');
-});
-
-$app->get('/kontaktai', function() use ($app){
-    return $app['twig']->render('static/kontaktai.html');
-});
 
 
 $app->run();

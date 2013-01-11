@@ -4,9 +4,10 @@ namespace Armchair;
 class PostEntity
 {
     protected $slug;
-    protected $title;
+    protected $name;
     protected $date;
     protected $author;
+    protected $category;
     protected $contentPath;
     protected $content;
     protected $path;
@@ -19,11 +20,17 @@ class PostEntity
 
     public function load($metadata)
     {
-        $this->title = $metadata['title'];
+        $this->name = $metadata['name'];
         $this->date = $metadata['date'];
         $this->author = $metadata['author'];
+        $this->category = $metadata['category'];
         $this->contentPath = $metadata['contentPath'];
         $this->path = $metadata['path'];
+    }
+
+    public function getDate()
+    {
+        return $this->date;
     }
 
     public function getSlug()
@@ -31,9 +38,14 @@ class PostEntity
         return $this->slug;
     }
 
-    public function getTitle()
+    public function getCategory()
     {
-        return $this->title;
+        return $this->category;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function getContent()

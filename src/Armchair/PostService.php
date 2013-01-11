@@ -22,6 +22,20 @@ class PostService
         return $this->data;
     }
 
+    public function getAllByCategory($categorySlug)
+    {
+        $return = array();
+        $data = $this->getAll();
+
+        foreach ($data as $item) {
+            if ($item->getCategory() == $categorySlug) {
+                $return[] = $item;
+            }
+        }
+
+        return $return;
+    }
+
     public function exists($slug)
     {
         return array_key_exists($slug, $this->data);
@@ -34,7 +48,15 @@ class PostService
      */
     public function load($path)
     {
-        $dirs = $this->getPostDirsByPath($path);
+        $dirs = array();
+        
+        if (is_string($path)) {
+            $path = array($path);
+        }
+
+        foreach ($path as $p) {
+            $dirs = array_merge($this->getPostDirsByPath($p), $dirs);
+        }
         
         foreach ($dirs AS $dir) {
             require_once($dir . '/autoload.php');

@@ -1,5 +1,5 @@
 <ul class="nav">
-    <li><a href="{{ app.request.baseUrl ~ '/'}}">Pradžia</a></li>
-    <li><a href="{{ app.request.baseUrl ~ '/apie' }}">Apie</a></li>
-    <li><a href="{{ app.request.baseUrl ~ '/kontaktai' }}">Kontaktai</a></li>
+    {% for item in menu %}
+        <li{% if pageSlug == item.slug %} class="active"{% endif %}><a href="{{ app.request.baseUrl ~ '/' ~ item.slug}}">{{ item.name }}</a></li>
+    {% endfor %}
 </ul>

@@ -6,9 +6,11 @@ TODO
     - Move posts from WP
     - Format text in posts
     - Images in posts
+    - Comments
     - Tests
-    - Responsive design
+    - Fix responsiveness design
     - Do more design
+    - Migrate to controllers
 
 
 
