@@ -1,9 +1,9 @@
 <?php
 $this->add(__DIR__, array(
-    'name' => 'Pirmas postas',
-    'date' => '2013-01-06',
+    'name' => 'PhoneGap - pirma pažintis',
+    'date' => '2013-01-08',
     'author' => 'kuusas',
-    'category' => 'bendrai',
+    'category' => 'mobile',
     'contentPath' => __DIR__ . '/post.php',
     'path' => __DIR__,
 ));

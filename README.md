@@ -11,7 +11,7 @@ TODO
     - Fix responsiveness design
     - Do more design
     - Migrate to controllers
-
+    - Create post CLI app
 
 
 Makefile

@@ -1,0 +1,2 @@
+<p>Turim daug programuotojų su įsisenėjusiais blogais įpročiais. Mes programuotojai turėtume gerbti vienas kitą ir neleisti kitam užspringti savo priraitytais makaronais su mintimis "po manęs nors ir tvanas". PHP kodas turi būti standartizuotas, visiem suprantamas ir lengvai skaitomas! (!!!)</p>
+<p>Būtinai kartas nuo karto pasitikrinkite save <a title="PHP the right way" href="http://www.phptherightway.com" target="_blank">phptherightway.com</a> ir tai kartokite kol pašalinsit visus savo blogus įpročius.</p>
