@@ -47,6 +47,10 @@ $app->get('/menu/{pageSlug}', function($pageSlug) use ($app){
             'slug' => 'apie',
         ),
         array(
+            'name' => 'Autoriai',
+            'slug' => 'autoriai',
+        ),
+        array(
             'name' => 'Kontaktai',
             'slug' => 'kontaktai',
         ),
@@ -107,6 +111,14 @@ $app->get('/kontaktai', function() use ($app){
         'categorySlug' => 'none',
         'postSlug' => 'none',
         'pageSlug' => 'kontaktai',
+    ));
+});
+
+$app->get('/autoriai', function() use ($app){
+    return $app['twig']->render('static/autoriai.html', array(
+        'categorySlug' => 'none',
+        'postSlug' => 'none',
+        'pageSlug' => 'autoriai',
     ));
 });
 
