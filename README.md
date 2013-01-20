@@ -3,12 +3,11 @@ Fotelis.lt
 
 TODO
 =========
-    - Move posts from WP
+    - Fix responsive design
     - Format text in posts
     - Images in posts
     - Comments
     - Tests
-    - Fix responsiveness design
     - Do more design
     - Migrate to controllers
     - Create post CLI app
