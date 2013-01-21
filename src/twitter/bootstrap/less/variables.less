@@ -1,13 +1,17 @@
 // Grays
 // -------------------------
-@black:                 #23272e;
-@grayDarker:            lighten(@black, 5%);
-@grayDark:              lighten(@black, 10%);
-@gray:                  lighten(@black, 15%);
-@grayLight:             lighten(@black, 40%);
-@grayLighter:           lighten(@black, 70%);
-@white:                 lighten(@black, 90%);
+@black:                 #333;
+@grayDarker:            #79705a;
+@grayDark:              #977347;
+@gray:                  #ecd8b7;
+@grayLight:             #f2ecd4;
+@grayLighter:           #f8f4e8;
+@white:                 #fff;
 
+// Scaffolding
+// -------------------------
+// @bodyBackground:        @white;
+@textColor:             @black;
 
 // Accent colors
 // -------------------------
@@ -22,7 +26,7 @@
 
 // Links
 // -------------------------
-@linkColor:             #3b4b6e;
+@linkColor:             @grayDark;
 @linkColorHover:        lighten(@linkColor, 15%);
 
 // Typography
@@ -44,6 +48,15 @@
 // Navbar
 // -------------------------
 @navbarHeight:                    60px;
-@navbarBackgroundHighlight:       @grayLighter;
-@navbarText:                      #000;
-@navbarLinkColor:                 #000;
+@navbarBackgroundHighlight:       @gray;
+@navbarText:                      @grayDark;
+@navbarLinkColor:                 @grayDarker;
+@navbarLinkColorActive:           @grayDark;
+
+// Wells
+// -------------------------
+@wellBackground:                  @grayLight;
+
+// Buttons
+// -------------------------
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 50%);
