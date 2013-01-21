@@ -10,6 +10,7 @@ class PostEntity
     protected $category;
     protected $contentPath;
     protected $content;
+    protected $shortText;
     protected $path;
 
     public function __construct($slug, $metadata)
@@ -26,6 +27,7 @@ class PostEntity
         $this->category = $metadata['category'];
         $this->contentPath = $metadata['contentPath'];
         $this->path = $metadata['path'];
+        $this->shortText = $metadata['shortText'];
     }
 
     public function getDate()
@@ -46,6 +48,11 @@ class PostEntity
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getShortText()
+    {
+        return $this->shortText;
     }
 
     public function getContent()
