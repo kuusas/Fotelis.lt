@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 
+{% block title %}{{ post.name }}{% endblock %}
+{% block description %}{{ post.shortText }}{% endblock %}
+
 {% block content %}
     <div class="row-fluid blog-post">
         <h1>{{ post.name }}<small class="pull-right">{{ post.date }}</small></h1>
