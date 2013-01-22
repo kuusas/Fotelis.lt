@@ -5115,9 +5115,6 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
-html {
-  height: 100%;
-}
 body {
   background-color: #faf7ee;
   background-image: -moz-linear-gradient(top, #ffffff, #f2ecd4);
