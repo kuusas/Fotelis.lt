@@ -3,10 +3,10 @@
 @black:                 #333;
 @grayDarker:            #79705a;
 @grayDark:              #977347;
-@gray:                  #ecd8b7;
-@grayLight:             #f2ecd4;
-@grayLighter:           #f8f4e8;
-@white:                 #fff;
+@gray:                  #958e7c;
+@grayLight:             #ecd8b7;
+@grayLighter:           #f2ecd4;
+@white:                 #f8f4e8;
 
 // Scaffolding
 // -------------------------
@@ -15,12 +15,12 @@
 
 // Accent colors
 // -------------------------
-@blue:                  #049cdb;
+@blue:                  #75bdb9;
 @blueDark:              #0064cd;
 @green:                 #46a546;
 @red:                   #9d261d;
-@yellow:                #ffc40d;
-@orange:                #f89406;
+@yellow:                #eeb450;
+@orange:                #ea7f5f;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
@@ -35,9 +35,9 @@
 @serifFontFamily:       Palatino, Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          14px;
+@baseFontSize:          18px;
 @baseFontFamily:        @serifFontFamily;
-@baseLineHeight:        20px;
+@baseLineHeight:        26px;
 @altFontFamily:         @sansFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
@@ -48,15 +48,16 @@
 // Navbar
 // -------------------------
 @navbarHeight:                    60px;
-@navbarBackgroundHighlight:       @gray;
+@navbarBackgroundHighlight:       @grayLight;
 @navbarText:                      @grayDark;
 @navbarLinkColor:                 @grayDarker;
 @navbarLinkColorActive:           @grayDark;
 
 // Wells
 // -------------------------
-@wellBackground:                  @grayLight;
+@wellBackground:                  @grayLighter;
 
 // Buttons
 // -------------------------
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 50%);
+@btnPrimaryBackground:              @blue;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);

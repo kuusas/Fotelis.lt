@@ -1,11 +1,11 @@
 {% for item in posts %}
-<div class="row-fluid">
+<div class="row-fluid blog-post">
     <h2>
         <a href="{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}" title="{{ item.name }}">
             {{ item.name }}
         </a> 
         <small class="pull-right">{{ item.date }}</small>
     </h2>
-    <p>{{ item.shortText }}
+    <p>{{ item.shortText }}</p>
 </div><!--/row-->
 {% endfor %}

@@ -1,5 +1,5 @@
 <div class="span4">
-    <div class="well sidebar-nav">
+    <div class="sidebar-nav well well-orange">
         <ul class="nav nav-list">
             {% for item in categories %}
             <li{% if item.slug == categorySlug %} class="active"{% endif %}><a href="{{ app.request.baseUrl ~ '/' ~ item.slug }}">{{ item.name }}</a></li>
@@ -8,7 +8,7 @@
     </div><!--/.well -->
 </div><!--/span-->
 <div class="span8">
-    <div class="well sidebar-nav">
+    <div class="sidebar-nav well well-yellow">
         <ul class="nav nav-list">
             {% if posts|length > 0 %}
                 {% for item in posts %}

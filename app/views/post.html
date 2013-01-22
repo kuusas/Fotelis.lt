@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>{{ post.name }}</h1>
+    <div class="row-fluid blog-post">
+        <h1>{{ post.name }}<small class="pull-right">{{ post.date }}</small></h1>
     
-    {{ post.content | raw }}
+        {{ post.content | raw }}
+    </div>
 {% endblock %}

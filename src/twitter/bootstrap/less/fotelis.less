@@ -1,9 +1,9 @@
 body {
-    #gradient > .vertical(@white, @grayLighter);
+    #gradient > .vertical(#fff, @grayLighter);
 }
 
 .sidebar-nav {
-    font-size: 11px;
+    font-size: @fontSizeSmall;
 }
 .icon-facebook {
     background-image: url('../img/icon-facebook.png');
@@ -34,4 +34,42 @@ body {
 .author-profile ul {
     margin-left: 8px;
     margin-top: 10px;
+}
+
+.blog-post {
+    border-bottom: 1px solid @hrBorder;
+    margin-bottom: 20px;
+    p {
+        padding-bottom: 20px;
+    }
+}
+
+.well {
+    .border-radius(0);
+    border: none;
+}
+
+
+.well-orange {
+    background-color: @orange;
+    color: @white;
+}
+
+.well-yellow {
+    background-color: @yellow;
+    color: @white;
+}
+
+.sidebar-nav.well a {
+    color: #fff;
+}
+
+.sidebar-nav.well a:hover,
+.sidebar-nav.well .active a {
+    background-color: @grayLighter;
+    color: @grayDark;
+}
+
+.hero-unit {
+    .border-radius(0);
 }
