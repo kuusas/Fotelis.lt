@@ -5115,6 +5115,9 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+html {
+  height: 100%;
+}
 body {
   background-color: #faf7ee;
   background-image: -moz-linear-gradient(top, #ffffff, #f2ecd4);
@@ -5124,6 +5127,7 @@ body {
   background-image: linear-gradient(to bottom, #ffffff, #f2ecd4);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2ecd4', GradientType=0);
+  height: 100%;
 }
 .sidebar-nav {
   font-size: 15.299999999999999px;
