@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
 
+{% block title %}
+    {% if categorySlug %}
+        Fotelis.lt {{ categorySlug }} programuotojams
+    {% else %}
+        Fotelis.lt - Programuojantiems programuotojams apie programavimą
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="hero-unit">
     <h1>Labàdiena developeriai,</h1>
