@@ -1,10 +1,16 @@
 body {
-    #gradient > .vertical(#fff, @grayLighter);
     height: 100%;
+}
+
+.navbar {
+    .box-shadow(0 0 10px rgba(203, 203, 196, 1));
 }
 
 .sidebar-nav {
     font-size: @fontSizeSmall;
+    position: relative;
+    z-index: 10;
+    opacity: .8;
 }
 .icon-facebook {
     background-image: url('../img/icon-facebook.png');
@@ -73,4 +79,63 @@ body {
 
 .hero-unit {
     .border-radius(0);
+}
+
+
+.armchair {
+    position: fixed;;
+    bottom: 0;
+    z-index: 5;
+}
+
+.navbar-inner {
+    #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+}
+
+ /* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: -20px auto -40px;
+    padding-top: 20px;
+    #gradient > .vertical(@white, @grayLighter);
+}
+
+/* Set the fixed height of the footer here */
+#footer, #push {
+    height: 60px;
+    padding-top: 20px;
+}
+
+#footer {
+    position: relative;
+    z-index: 1;
+    background-color: #443c2b;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right:  20px;
+    color: @white;
+
+    a {
+        color: @white;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .box-shadow(0 0 10px rgba(203, 203, 196, 1));
 }
