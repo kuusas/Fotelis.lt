@@ -36,39 +36,40 @@
 </head>
 
 <body>
-  <div id="wrap">
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="{{ app.request.baseUrl ~ '/' }}" title="Fotelis">Fotelis.lt</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              web development
-            </p>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="{{ app.request.baseUrl ~ '/' }}" title="Fotelis">Fotelis.lt</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+            web development
+          </p>
 
-            {{ render(app.request.baseUrl ~ '/menu/' ~ pageSlug ) }}
+          {{ render(app.request.baseUrl ~ '/menu/' ~ pageSlug ) }}
 
-          </div><!--/.nav-collapse -->
-        </div>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
+  </div>
+
+  <div id="wrap">
 
     <div class="container-fluid">
         <div class="row-fluid">
-          <div class="span4">
+          <div class="span4 nav">
             {{ render(app.request.baseUrl ~ '/sidebar/' ~ categorySlug ~ '/' ~ postSlug ) }}
 
-            <div class="armchair">
+            <div class="armchair hidden-phone">
               <img src="{{ app.request.baseUrl }}/assets/img/armchair.png" alt="fotelis">
             </div>
           </div><!--/span-->
-          <div class="span8">
+          <div class="span8 content">
             {% block content %}
               <h1>Labadiena</h1>
             {% endblock %}
@@ -88,23 +89,8 @@
     </footer>
   </div><!--/.fluid-container-->
 
-{#
-  <!-- Le javascript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="{{ app.request.basePath }}/js/jquery.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-transition.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-alert.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-modal.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-dropdown.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-scrollspy.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-tab.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-tooltip.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-popover.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-button.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-collapse.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-carousel.js"></script>
-  <script src="{{ app.request.basePath }}/js/bootstrap-typeahead.js"></script>
-#}
-  </body>
-  </html>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="{{ app.request.basePath }}/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
