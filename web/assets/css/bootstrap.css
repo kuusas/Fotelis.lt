@@ -5118,6 +5118,9 @@ a.badge:hover {
 body {
   height: 100%;
 }
+pre {
+  width: 95%;
+}
 .navbar {
   -webkit-box-shadow: 0 0 10px #cbcbc4;
   -moz-box-shadow: 0 0 10px #cbcbc4;

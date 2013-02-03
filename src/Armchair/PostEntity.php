@@ -57,6 +57,13 @@ class PostEntity
 
     public function getContent()
     {
-        return file_get_contents($this->contentPath);
+        ob_start();
+        
+        include($this->contentPath);
+        $return = ob_get_contents();
+
+        ob_end_clean();
+
+        return $return;
     }
 }

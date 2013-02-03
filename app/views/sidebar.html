@@ -14,7 +14,7 @@
                 {% for item in posts %}
                 <li{% if item.slug == postSlug %} class="active"{% endif %}>
                     <a href="{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}" title="{{ item.name }}">
-                        {{ item.name | slice(0, 30) }}
+                        {{ item.name | slice(0, 20) }}
                         <small class="pull-right">{{ item.date }}</small>
                     </a>
                 </li>
