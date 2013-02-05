@@ -5128,7 +5128,7 @@ pre {
 }
 .sidebar-nav {
   font-size: 15.299999999999999px;
-  position: relative;
+  position: fixed;
   z-index: 10;
   opacity: .8;
 }
