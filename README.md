@@ -3,12 +3,13 @@ Fotelis.lt
 
 TODO
 =========
-    - Fix responsive design
+    + Fix responsive design
+    + Do more design
+    - RSS feed
+    - Comments
     - Format text in posts
     - Images in posts
-    - Comments
     - Tests
-    - Do more design
     - Migrate to controllers
     - Create post CLI app
 
