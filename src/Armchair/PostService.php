@@ -30,6 +30,18 @@ class PostService
         }
     }
 
+    public function getLast()
+    {
+        $return = null;
+
+        $data = $this->getAll();
+        $data = array_reverse($data);
+
+        $return = array_shift($data);
+
+        return $return;
+    }
+
     public function getAll()
     {
         $this->sortByDate();

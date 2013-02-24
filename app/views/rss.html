@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Fotelis.lt - Programuojantiems programuotojams apie programavimą</title>
+        <description>Blogas programuotojams apie programavimą</description>
+        <link>http://www.fotelis.lt</link>
+        <lastBuildDate>{{ date }}</lastBuildDate>
+
+        {% for item in posts %}
+        <item>
+            <title>{{ item.name }}</title>
+            <description>{{ item.shortText }}</description>
+            <link>{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}</link>
+            <guid>{{ item.slug }}</guid>
+            <pubDate>{{ item.dateRss }}</pubDate>
+        </item>
+        {% endfor %}
+
+    </channel>
+</rss>

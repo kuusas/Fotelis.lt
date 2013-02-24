@@ -122,6 +122,19 @@ $app->get('/autoriai', function() use ($app){
     ));
 });
 
+// rss feed
+$app->get('/rss', function() use ($app){
+    $postService = $app['armchair.post'];
+    $posts = $postService->getAll();
+
+    $date = new DateTime($postService->getLast()->getDate());
+
+    return $app['twig']->render('rss.html', array(
+        'posts' => $posts,
+        'date' => $date->format(DateTime::RSS),
+    ));
+});
+
 // blog entry
 $app->get('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) use ($app) {
     $service = $app['armchair.post'];

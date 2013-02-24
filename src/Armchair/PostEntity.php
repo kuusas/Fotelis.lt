@@ -1,6 +1,8 @@
 <?php
 namespace Armchair;
 
+use DateTime;
+
 class PostEntity
 {
     protected $slug;
@@ -33,6 +35,12 @@ class PostEntity
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function getDateRss()
+    {
+        $date = new DateTime($this->date);
+        return $date->format(DateTime::RSS);
     }
 
     public function getSlug()
