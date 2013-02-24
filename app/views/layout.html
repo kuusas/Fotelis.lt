@@ -58,32 +58,29 @@
     </div>
   </div>
 
-  <div id="wrap">
+  <div id="wrap" class="container-fluid">
+      <div class="row-fluid">
+        <div class="span4 nav">
+          {{ render(app.request.baseUrl ~ '/sidebar/' ~ categorySlug ~ '/' ~ postSlug ) }}
 
-    <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span4 nav">
-            {{ render(app.request.baseUrl ~ '/sidebar/' ~ categorySlug ~ '/' ~ postSlug ) }}
+          <div class="armchair hidden-phone">
+            <img src="{{ app.request.baseUrl }}/assets/img/armchair.png" alt="fotelis">
+          </div>
+        </div><!--/span-->
+        <div class="span8 content">
+          {% block content %}
+            <h1>Labadiena</h1>
+          {% endblock %}
+        </div><!--/span-->
+      </div><!--/row-->
 
-            <div class="armchair hidden-phone">
-              <img src="{{ app.request.baseUrl }}/assets/img/armchair.png" alt="fotelis">
-            </div>
-          </div><!--/span-->
-          <div class="span8 content">
-            {% block content %}
-              <h1>Labadiena</h1>
-            {% endblock %}
-          </div><!--/span-->
-        </div><!--/row-->
-
-      </div>
-
-    <div id="push"></div>
+      <div id="push"></div>
   </div><!--/#wrap-->
+
 
   <div class="container-fluid">
     <footer id="footer">
-      <div class="offset5 span8">
+      <div class="offset5 span7">
         <p>&copy; 2013 Fotelis.lt. El. paštas: <a href="mailto:info@fotelis.lt">info@fotelis.lt</a></p>
       </div>
     </footer>

@@ -1023,16 +1023,28 @@
     overflow: visible !important;
   }
 }
+@media (max-width: 2000px) {
+  .armchair img {
+    width: 70%;
+    height: 70%;
+  }
+}
+@media (max-width: 1600px) {
+  .armchair img {
+    width: 70%;
+    height: 70%;
+  }
+}
 @media (max-width: 1400px) {
   .armchair img {
-    width: 85%;
-    height: 85%;
+    width: 60%;
+    height: 60%;
   }
 }
 @media (max-width: 1200px) {
   .armchair img {
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
   }
 }
 @media (max-width: 1024px) {
@@ -1045,8 +1057,8 @@
 }
 @media (max-width: 979px) {
   .armchair img {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
   }
 }
 @media (max-width: 979px) {

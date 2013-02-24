@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {% if categorySlug %}
+    {% if categorySlug != 'none' %}
         Fotelis.lt {{ categorySlug }} programuotojams
     {% else %}
         Fotelis.lt - Programuojantiems programuotojams apie programavimą
