@@ -7,3 +7,5 @@ Options -Indexes +FollowSymLinks
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*) app.php [QSA,L]
+
+SetEnv dev_zilvinas
