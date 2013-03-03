@@ -9,4 +9,7 @@
     
         {{ post.content | raw }}
     </div>
+
+    {{ render(app.request.baseUrl ~ '/comment/list/' ~ post.slug ) }}
+    {{ render(app.request.baseUrl ~ '/comment/add/' ~ post.slug ) }}
 {% endblock %}

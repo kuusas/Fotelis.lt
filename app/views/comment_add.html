@@ -1,0 +1,5 @@
+<form action="{{ app.request.baseUrl ~ '/comment/add/' ~ postSlug }}" method="post">
+    {{ form_widget(form) }}
+
+    <input type="submit" name="submit" />
+</form>

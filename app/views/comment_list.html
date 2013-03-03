@@ -1,0 +1,8 @@
+<div class="row-fluid comments">
+    {% for item in data %}
+    <div class="comment">
+        <p>{{ item.name }}<small class="pull-right">{{ item.date_created }}</small></p>
+        {{ item.comment }}
+    </div>
+    {% endfor %}
+</div>

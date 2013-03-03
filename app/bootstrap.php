@@ -3,26 +3,55 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app = new Silex\Application();
-$app['debug'] = true;
+if (strstr(SILEX_ENV, 'dev')) {
+    $app['debug'] = true;
+}
 
 // services
+$app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => require(__DIR__ . '/config/' . SILEX_ENV . '.php'),
+));
+$app->register(new Silex\Provider\FormServiceProvider());
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'translator.messages' => array(),
+));
+
+$app->before(function() use ($app) {
+    $flash = $app['session']->get('flash');
+    $app['session']->set('flash', null);
+
+    if (!empty($flash)) {
+        $app[ 'twig' ]->addGlobal('flash', $flash);
+    }
+});
 
 $app['armchair.post'] = $app->share(function() {
     $obj = new Armchair\PostService();
     $obj->load(array(
         __DIR__ . '/posts'
     ));
-
+    return $obj;
+});
+$app['armchair.category'] = $app->share(function() use ($app) {
+    $obj = new Armchair\CategoryService($app['request']);
     return $obj;
 });
 
-$app['armchair.category'] = $app->share(function() use ($app) {
-    $obj = new Armchair\CategoryService($app['request']);
+$app['armchair.model.comment'] = $app->share(function() use ($app) {
+    $obj = new Armchair\CommentModel($app['db']);
+    return $obj;
+});
 
+$app['armchair.comment'] = $app->share(function() use ($app) {
+    $obj = new Armchair\CommentService($app['armchair.model.comment']);
     return $obj;
 });
 
@@ -135,8 +164,68 @@ $app->get('/rss', function() use ($app){
     ));
 });
 
+// comments list
+$app->get('/comment/list/{postSlug}', function($postSlug) use ($app){
+    $data = $app['armchair.comment']->getAllByReference($postSlug);
+
+    return $app['twig']->render('comment_list.html', array(
+        'data' => $data
+    ));
+});
+
+// add comment
+$app->match('/comment/add/{postSlug}', function($postSlug) use ($app){
+    $request = $app['request'];
+
+    $post = $app['armchair.post']->get($postSlug);
+    if (!$post) {
+        throw new Exception('Post does not exist');
+    }
+
+    $data = array(
+        'reference' => $postSlug
+    );
+
+    $form = $app['form.factory']->createBuilder('form', $data)
+        ->add('reference', 'hidden')
+        ->add('name')
+        ->add('email')
+        ->add('comment', 'textarea')
+        ->getForm();
+
+    if ('POST' == $request->getMethod()) {
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+
+            if ($app['armchair.comment']->insert($data)) {
+                $app['session']->set('flash', array(
+                    'type' => 'success',
+                    'title' => 'Ačiū!',
+                    'message' => 'Jūsų komentaras paskelbtas.',
+                ));
+            } else {
+                $app['session']->set('flash', array(
+                    'type' => 'error',
+                    'title' => 'Klaida!',
+                    'message' => 'Atsiprašome, bet nepavyko išsaugoti Jūsų komentaro. Bandykite dar kartą.',
+                ));
+            }
+
+            return $app->redirect('/' . $post->getCategory() . '/' . $post->getSlug());
+        }
+    }
+
+    return $app['twig']->render('comment_add.html', array(
+        'form' => $form->createView(),
+        'postSlug' => $postSlug,
+    ));
+});
+
+
 // blog entry
-$app->get('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) use ($app) {
+$app->match('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) use ($app) {
     $service = $app['armchair.post'];
 
     $post = $service->get($postSlug);

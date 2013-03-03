@@ -69,6 +69,17 @@
           </div>
         </div><!--/span-->
         <div class="span8 content">
+          {% block flash %}
+            {% if flash is defined %}
+            <div class="alert alert-{{ flash.type }}">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <p>
+                <strong>{{ flash.title }}</strong>
+                {{ flash.message }}
+              </p>
+            </div>
+            {% endif %}
+          {% endblock flash %}
           {% block content %}
             <h1>Labadiena</h1>
           {% endblock %}
