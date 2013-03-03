@@ -18,8 +18,7 @@ class CommentService
     public function update(array $data, $id)
     {
         $data['date_updated'] = date('Y-m-d H:i:s');
-        
-        $this->model->updat($data, $id);
+        return $this->model->update($data, $id);
     }   
 
     public function insert(array $data)
@@ -27,6 +26,6 @@ class CommentService
         $data['date_created'] = date('Y-m-d H:i:s');
         $data['ip'] = $_SERVER['REMOTE_ADDR'];
 
-        $this->model->insert($data);
+        return $this->model->insert($data);
     }   
 }

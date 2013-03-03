@@ -10,6 +10,43 @@
         {{ post.content | raw }}
     </div>
 
-    {{ render(app.request.baseUrl ~ '/comment/list/' ~ post.slug ) }}
-    {{ render(app.request.baseUrl ~ '/comment/add/' ~ post.slug ) }}
+    {{ render(app.request.baseUrl ~ '/comment/list/' ~ categorySlug ~ '/' ~ post.slug ) }}
+
+    <div class="well">
+        <form action="{{ app.request.baseUrl ~ '/' ~ categorySlug ~ '/' ~ postSlug }}#comment" method="post" class="comment-form" id="comment">
+            {% if flash is defined %}
+            <div class="alert alert-{{ flash.type }}">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <p>
+                <strong>{{ flash.title }}</strong>
+                {{ flash.message }}
+              </p>
+            </div>
+            {% endif %}
+            <fieldset>
+                <legend>Komentuoti</legend>
+                <div class="row-fluid">
+                    <div class="span6">
+                        {{ form_label(form.name, 'Vardas') }}
+                        {{ form_errors(form.name) }}
+                        {{ form_widget(form.name, { 'attr': {'class': 'input-xlarge'}} ) }}
+                    </div>
+                    <div class="span6">
+                        {{ form_label(form.email, 'El. paštas (viešai nebus skelbiamas)' )}}
+                        {{ form_errors(form.email )}}
+                        {{ form_widget(form.email, { 'attr': {'class': 'input-xlarge'}} ) }}
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    {{ form_label(form.comment, 'Komentaras' ) }}
+                    {{ form_errors(form.comment) }}
+                    {{ form_widget(form.comment) }}
+                </div>
+
+                {{ form_rest(form) }}
+                <input type="submit" name="submit" value="Komentuoti" class="btn btn-large btn-primary" />
+            </fieldset>
+        </form>
+    </div>
 {% endblock %}

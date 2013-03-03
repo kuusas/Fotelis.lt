@@ -4,7 +4,6 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints as Assert;
 
 $app = new Silex\Application();
 if (strstr(SILEX_ENV, 'dev')) {
@@ -46,13 +45,23 @@ $app['armchair.category'] = $app->share(function() use ($app) {
     return $obj;
 });
 
-$app['armchair.model.comment'] = $app->share(function() use ($app) {
+$app['armchair.comment.model'] = $app->share(function() use ($app) {
     $obj = new Armchair\CommentModel($app['db']);
     return $obj;
 });
 
 $app['armchair.comment'] = $app->share(function() use ($app) {
-    $obj = new Armchair\CommentService($app['armchair.model.comment']);
+    $obj = new Armchair\CommentService($app['armchair.comment.model']);
+    return $obj;
+});
+
+$app['armchair.comment.form'] = $app->share(function() use ($app) {
+    $obj = new Armchair\CommentForm(
+        $app['form.factory'],
+        $app['session'],
+        $app['request'],
+        $app['armchair.comment']
+    );
     return $obj;
 });
 
@@ -166,69 +175,31 @@ $app->get('/rss', function() use ($app){
 });
 
 // comments list
-$app->get('/comment/list/{postSlug}', function($postSlug) use ($app){
+$app->get('/comment/list/{categorySlug}/{postSlug}', function($categorySlug, $postSlug) use ($app){
     $data = $app['armchair.comment']->getAllByReference($postSlug);
 
     return $app['twig']->render('comment_list.html', array(
-        'data' => $data
+        'data' => $data,
     ));
 });
 
 // add comment
-$app->match('/comment/add/{postSlug}', function($postSlug) use ($app){
-    $request = $app['request'];
+// $app->match('/comment/add/{categorySlug}/{postSlug}', function($categorySlug, $postSlug) use ($app){
+//     $request = $app['request'];
 
-    $post = $app['armchair.post']->get($postSlug);
-    if (!$post) {
-        throw new Exception('Post does not exist');
-    }
+//     $post = $app['armchair.post']->get($postSlug);
+//     if (!$post) {
+//         throw new Exception('Post does not exist');
+//     }
 
-    $data = array(
-        'reference' => $postSlug
-    );
+//     $form = $app['armchair.comment.form']->getForm($postSlug);
 
-    $form = $app['form.factory']->createBuilder('form', $data)
-        ->add('reference', 'hidden')
-        ->add('name', 'text', array(
-            'constraints' => array(new Assert\NotBlank(), new Assert\Length(array('min' => 2)))
-        ))
-        ->add('email', 'text', array(
-            'constraints' => new Assert\Email()
-        ))
-        ->add('comment', 'textarea', array(
-            'constraints' => array(new Assert\NotBlank())
-        ))
-        ->getForm();
-
-    if ('POST' == $request->getMethod()) {
-        $form->bind($request);
-
-        if ($form->isValid()) {
-            $data = $form->getData();
-
-            if ($app['armchair.comment']->insert($data)) {
-                $app['session']->set('flash', array(
-                    'type' => 'success',
-                    'title' => 'Ačiū!',
-                    'message' => 'Jūsų komentaras paskelbtas.',
-                ));
-            } else {
-                $app['session']->set('flash', array(
-                    'type' => 'error',
-                    'title' => 'Klaida!',
-                    'message' => 'Atsiprašome, bet nepavyko išsaugoti Jūsų komentaro. Bandykite dar kartą.',
-                ));
-            }
-
-            return $app->redirect('/' . $post->getCategory() . '/' . $post->getSlug());
-        }
-    }
-
-    return $app['twig']->render('comment_add.html', array(
-        'form' => $form->createView(),
-        'postSlug' => $postSlug,
-    ));
-});
+//     return $app['twig']->render('comment_add.html', array(
+//         'form' => $form->createView(),
+//         'postSlug' => $postSlug,
+//         'categorySlug' => $categorySlug,
+//     ));
+// });
 
 
 // blog entry
@@ -241,11 +212,20 @@ $app->match('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) us
         throw new Exception('Post does not exist');
     }
 
+
+    $formService = $app['armchair.comment.form'];
+    $form = $formService->getForm($postSlug);
+    if ($formService->isSuccess()) {
+        return $app->redirect('/' . $post->getCategory() . '/' . $post->getSlug() . '#comment');
+    }
+
+
     return $app['twig']->render('post.html', array(
         'post' => $post,
         'categorySlug' => $categorySlug,
         'postSlug' => $postSlug,
         'pageSlug' => 'none',
+        'form' => $form->createView(),
     ));
 });
 

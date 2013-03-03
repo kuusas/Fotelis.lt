@@ -1,8 +1,11 @@
-<div class="row-fluid comments">
+<section class="row-fluid comments">
     {% for item in data %}
-    <div class="comment">
-        <p>{{ item.name }}<small class="pull-right">{{ item.date_created }}</small></p>
-        {{ item.comment }}
-    </div>
+    <article class="well comment clearfix">
+        <div class="author">
+            <strong>{{ item.name }}</strong>
+            <small class="pull-right">{{ item.date_created }}</small>
+        </div>
+        {{ item.comment | nl2br }}
+    </article>
     {% endfor %}
-</div>
+</section>
