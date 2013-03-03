@@ -1,6 +1,10 @@
 <section class="row-fluid comments">
     {% for item in data %}
     <article class="well comment clearfix">
+        <div class="avatar pull-left">
+            <img alt="Avataras" class="img-circle" src="{{ gravatar.get(item.email)|raw }}" />
+        </div>
+
         <div class="author">
             <strong>{{ item.name }}</strong>
             <small class="pull-right">{{ item.date_created }}</small>

@@ -7,6 +7,13 @@
             "email": "zilvinas@kuusas.lt"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Estina/MigrationBundle"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "1.0.*@dev",
@@ -20,7 +27,8 @@
         "symfony/translation": "~2.1",
 
         "symfony/locale": "~2.1",
-        "symfony/twig-bridge": "~2.1"
+        "symfony/twig-bridge": "~2.1",
+        "emberlabs/gravatarlib": "*"
     },
     "autoload": {
         "psr-0": {

@@ -5420,3 +5420,7 @@ body {
 .comments .comment .author {
   color: #75bdb9;
 }
+.comments .comment .avatar {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

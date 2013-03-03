@@ -4,7 +4,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
-
+use emberlabs\gravatarlib\Gravatar;
 $app = new Silex\Application();
 if (strstr(SILEX_ENV, 'dev')) {
     $app['debug'] = true;
@@ -24,6 +24,7 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.messages' => array(),
 ));
 
+$app['twig']->addGlobal('gravatar', new Gravatar());
 $app->before(function() use ($app) {
     $flash = $app['session']->get('flash');
     $app['session']->set('flash', null);
