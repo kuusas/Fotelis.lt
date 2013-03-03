@@ -4,6 +4,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints as Assert;
 
 $app = new Silex\Application();
 if (strstr(SILEX_ENV, 'dev')) {
@@ -188,9 +189,15 @@ $app->match('/comment/add/{postSlug}', function($postSlug) use ($app){
 
     $form = $app['form.factory']->createBuilder('form', $data)
         ->add('reference', 'hidden')
-        ->add('name')
-        ->add('email')
-        ->add('comment', 'textarea')
+        ->add('name', 'text', array(
+            'constraints' => array(new Assert\NotBlank(), new Assert\Length(array('min' => 2)))
+        ))
+        ->add('email', 'text', array(
+            'constraints' => new Assert\Email()
+        ))
+        ->add('comment', 'textarea', array(
+            'constraints' => array(new Assert\NotBlank())
+        ))
         ->getForm();
 
     if ('POST' == $request->getMethod()) {
