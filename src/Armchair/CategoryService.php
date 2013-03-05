@@ -29,6 +29,11 @@ class CategoryService
                 'url' => $this->request->getBaseUrl() . '/mobile',
             ),
             array(
+                'name' => 'HTML5',
+                'slug' => 'html5',
+                'url' => $this->request->getBaseUrl() . '/html5',
+            ),
+            array(
                 'name' => 'Bendrai',
                 'slug' => 'bendrai',
                 'url' => $this->request->getBaseUrl() . '/bendrai',

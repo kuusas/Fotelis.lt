@@ -5274,6 +5274,9 @@ pre {
   position: relative;
   z-index: 10;
 }
+.content code {
+  line-height: 12px;
+}
 .icon-facebook {
   background-image: url('../img/icon-facebook.png');
   background-position: 0;
@@ -5304,9 +5307,6 @@ pre {
 .blog-post {
   border-bottom: 1px solid #f1edde;
   margin-bottom: 20px;
-}
-.blog-post p {
-  padding-bottom: 20px;
 }
 .well {
   -webkit-border-radius: 0;
