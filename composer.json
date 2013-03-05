@@ -28,7 +28,9 @@
 
         "symfony/locale": "~2.1",
         "symfony/twig-bridge": "~2.1",
-        "emberlabs/gravatarlib": "*"
+        "emberlabs/gravatarlib": "*",
+        "knplabs/knp-markdown-bundle": "1.2.*@dev",
+        "symfony/console": "*"
     },
     "autoload": {
         "psr-0": {
