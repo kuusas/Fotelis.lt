@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>http://www.fotelis.lt/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>http://www.fotelis.lt/rss</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>http://www.fotelis.lt/apie</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/autoriai</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/kontaktai</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/php</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/symfony2</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/mobile</loc>
-    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://www.fotelis.lt/frontend</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/bendrai</loc>
-    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://www.fotelis.lt/frontend/frontend-less</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://www.fotelis.lt/php/greitos-web-aplikacijos-su-composer-silex-twit-ir-twitter-bootstrap</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/mobile/phonegap-pirma-pazintis</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/php/sutvarkyk-koda</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/php/php-programavimo-standartai-ir-kodo-stiliai</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>http://www.fotelis.lt/bendrai/pirmas-postas</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 </urlset>
