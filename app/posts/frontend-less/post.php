@@ -76,8 +76,6 @@ article p a:hover {
 }
 </code></pre>
 
-<h2>Nesting</h2>
-
 <h3>Blogoji pusė</h3>
 
 <p>Blogosios pusės nėra! Naudojant su protu. 
@@ -152,7 +150,7 @@ body &gt; header nav a.active {
 
 <h3>Geroji pusė</h3>
 
-<p>Mixinai leidžia vienoj vietoj aprašyti keletą savybių ir reikiamoje vietoje juos iškviestus tas savybes panaudoti. Taip išvengiame dubliuto kodo rašymo. Mixinai priima ir argumentus - tad galima kurti universalius mixinus, kurie priima tam tikras savybes per argumentus.
+<p>Mixinai leidžia vienoj vietoj aprašyti keletą savybių ir reikiamoje vietoje juos iškviestus tas savybes panaudoti. Taip išvengiame dubliuoto kodo rašymo. Mixinai priima ir argumentus - tad galima kurti universalius mixinus, kurie priima tam tikras savybes per argumentus.
 Kaip mixinai veikia? Aprašius mixiną ir jį iškvietus, generuojant CSS kvietimo vietoje tiesiog surenderinama tai, kas buvo aprašyta mixine.</p>
 
 <p>LESS:</p>
@@ -183,8 +181,6 @@ footer {
     -moz-border-radius: 10px;
 }
 </code></pre>
-
-<h2>Mixins</h2>
 
 <h3>Blogoji pusė</h3>
 

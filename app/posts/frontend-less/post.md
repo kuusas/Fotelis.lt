@@ -71,7 +71,6 @@ Sugeneruotas CSS:
 
 
 
-## Nesting
 ### Blogoji pusė
 Blogosios pusės nėra! Naudojant su protu. 
 Yra manančių, kad su nestingu elgtis reikėtų atsargiai, nes greitai išaugs generuojamo CSS dydis. Tai MITAS, kilęs (turbūt) iš nesupratimo kaip veikia nestingas arba tiesiog iš nestruktūrizuoto CSS fanklubo. Jų atveju taip, sutinku, selektoriai pridės svorio CSS'ui.
@@ -141,7 +140,7 @@ Begalvodamas apie nestingą vistik įžvelgiau kada galima su juo prisižaist - 
 
 ## Mixins 
 ### Geroji pusė
-Mixinai leidžia vienoj vietoj aprašyti keletą savybių ir reikiamoje vietoje juos iškviestus tas savybes panaudoti. Taip išvengiame dubliuto kodo rašymo. Mixinai priima ir argumentus - tad galima kurti universalius mixinus, kurie priima tam tikras savybes per argumentus.
+Mixinai leidžia vienoj vietoj aprašyti keletą savybių ir reikiamoje vietoje juos iškviestus tas savybes panaudoti. Taip išvengiame dubliuoto kodo rašymo. Mixinai priima ir argumentus - tad galima kurti universalius mixinus, kurie priima tam tikras savybes per argumentus.
 Kaip mixinai veikia? Aprašius mixiną ir jį iškvietus, generuojant CSS kvietimo vietoje tiesiog surenderinama tai, kas buvo aprašyta mixine.
 
 LESS:
@@ -172,7 +171,6 @@ Sugeneruotas CSS:
     }
 
 
-## Mixins 
 ### Blogoji pusė
 Tačiau su mixinais būkite atsargūs - juos naudoti reikėtų, ten, kur tikrai kodo dubliavimo išvengti neįmanoma. Jokiais būdais neaprašinėti klasių savybių, kurias tikrai galima būtų elementui priskirti tiesiog nurodant tam tikrą klasę ir mixinuose nenaudokite mixinų (nebent jaučiatės pakankamai stiprūs tai suvaldyti).
 
