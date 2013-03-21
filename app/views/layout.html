@@ -16,6 +16,7 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
+  <link rel="alternate" type="application/rss+xml" title="Fotelis.lt - Programuojantiems programuotojams apie programavimą" href="http://www.fotelis.lt/rss" />
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ app.request.basePath }}/assets/ico/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ app.request.basePath }}/assets/ico/apple-touch-icon-114-precomposed.png">
@@ -49,7 +50,7 @@
         <div class="nav-collapse collapse">
           <p class="navbar-text pull-right">
             web development
-            <a href="{{ app.request.baseUrl ~ '/rss' }}" title="web development rss">RSS</a>
+            <span class="label label-warning"><a href="{{ app.request.baseUrl ~ '/rss' }}" title="web development rss">RSS</a></span>
           </p>
 
           {{ render(app.request.baseUrl ~ '/menu/' ~ pageSlug ) }}
