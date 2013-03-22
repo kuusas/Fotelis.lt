@@ -41,6 +41,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>http://www.fotelis.lt/frontend/bootstrap-frontend-framework</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>http://www.fotelis.lt/frontend/frontend-less</loc>
     <priority>0.80</priority>
   </url>
