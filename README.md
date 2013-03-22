@@ -5,8 +5,9 @@ TODO
 =========
     + Fix responsive design
     + Do more design
-    - RSS feed
-    - Comments
+    + RSS feed
+    + Comments
+    - 
     - Format text in posts
     - Images in posts
     - Tests

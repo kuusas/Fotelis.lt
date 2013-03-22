@@ -5264,6 +5264,9 @@ pre {
   -moz-box-shadow: 0 0 10px #cbcbc4;
   box-shadow: 0 0 10px #cbcbc4;
 }
+.navbar .label a {
+  color: #fff;
+}
 .sidebar-nav {
   font-size: 11.9px;
   position: relative;
