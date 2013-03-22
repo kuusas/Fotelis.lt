@@ -80,7 +80,7 @@ Savo aplikacijos kodą dėsim į atskirą failą - app.less. Vėliau turėsim ga
 
 <h3>Kompiliuojam LESS'ą</h3>
 
-<p>Apie LESS rašiau ankstesniame poste <linkas></p>
+<p>Apie LESS rašiau ankstesniame <a href="http://fotelis.lt/frontend/frontend-less">poste</a></p>
 
 <pre><code>lessc src/twitter/bootstrap/less/bootstrap.less &gt; web/assets/css/bootstrap.css
 lessc src/twitter/bootstrap/less/bootstrap-responsive.less &gt; web/assets/css/bootstrap-responsive.css

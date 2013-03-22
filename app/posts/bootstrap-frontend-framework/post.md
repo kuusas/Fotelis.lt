@@ -70,7 +70,7 @@ web/index.html turinys (vienas iš numatytųjų bootstrap layoutų):
 * Parsisiųsti index.html iš [example-bootstrap-frontend-framework@GitHub](https://github.com/kuusas/do-stuff-examples/blob/master/example-bootstrap-frontend-framework/web/index.html)
 
 ### Kompiliuojam LESS'ą
-Apie LESS rašiau ankstesniame poste <linkas>  
+Apie LESS rašiau ankstesniame [poste](http://fotelis.lt/frontend/frontend-less)
 
     lessc src/twitter/bootstrap/less/bootstrap.less > web/assets/css/bootstrap.css
     lessc src/twitter/bootstrap/less/bootstrap-responsive.less > web/assets/css/bootstrap-responsive.css
