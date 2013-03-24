@@ -6,6 +6,13 @@ O įkvėptas kolegos Povilo / @Pawka nusprendžiau pasidalinti įspūdžiais ir 
 <p>Kilo įkvėpimas - užsimaniau skaityti knygas. Žinoma, vietinė namų biblioteka neturėjo ką pasiūlyti, tad pasiklausinėjau kolegų, kas turi fizinių-popierinių knygų, kurias verta būtų paskaityti. Vienas kolega atnešė net kelias knygas, tarp kurių buvo iš ši - "The Mythical Man-Month: Essays on Software Engineering" by Fred Brooks.<br />
 Ją apibūdino, kaip "biblija IT projektų valdymui", ar kažkaip panašiai. Truputį pagooglinęs apie autorių radau tą patį, kaip ir kolega apibūdino. Taip ir nusprendžiau imtis šios knygos.</p>
 
+<h2>Brooks' Law</h2>
+
+<blockquote>
+  <p>"Adding manpower to a late software project makes it later"<br />
+  Fred Brooks</p>
+</blockquote>
+
 <h2>Knygos temos</h2>
 
 <p>Knygos temos sukasi apie tai kad, pridėjus darbo jėgos į vėluojantį projektą, projektas vėluos dar labiau, ši teorija netgi pavadina autoriaus vardu "Brooks' Law" - Brukso dėsnis. Jeigu iškarto kilo klausimas "kodėl?" arba netgi susierzinę sumurmėjote "nesąmonė" - knyga kaip tik jums, nes jūs dar laimingi ir nenusvilę nuo vėluojančių projektų pasekmių.<br />
