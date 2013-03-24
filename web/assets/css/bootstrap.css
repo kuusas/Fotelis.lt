@@ -5311,6 +5311,9 @@ pre {
   border-bottom: 1px solid #f1edde;
   margin-bottom: 20px;
 }
+.blog-post p {
+  max-width: 600px;
+}
 .well {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
