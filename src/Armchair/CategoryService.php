@@ -34,6 +34,11 @@ class CategoryService
                 'url' => $this->request->getBaseUrl() . '/frontend',
             ),
             array(
+                'name' => 'Knyga',
+                'slug' => 'knyga',
+                'url' => $this->request->getBaseUrl() . '/knyga',
+            ),
+            array(
                 'name' => 'Bendrai',
                 'slug' => 'bendrai',
                 'url' => $this->request->getBaseUrl() . '/bendrai',
