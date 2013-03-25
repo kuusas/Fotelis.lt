@@ -1,5 +1,5 @@
 Po ilgos ilgos pertraukos pagaliau perskaičiau knygą! Nuo pradžios iki pat pabaigos.  
-O įkvėptas kolegos Povilo / @Pawka nusprendžiau pasidalinti įspūdžiais ir parekomenduoti.  
+O įkvėptas kolegos Povilo / [@Pawka](http://pawka.linija.net/) nusprendžiau pasidalinti įspūdžiais ir parekomenduoti.  
 
 
 ## Kodėl ėmiau skaityti šią knygą? 
@@ -17,15 +17,14 @@ Kad ir kaip bebūtų, ši knyga, kurią skaičiau, yra originalaus leidimo 20-me
 Skaitant, bent jau pirmąją knygos pusę, atrodė what the f… aš čia skaitau? Juk šneka apie procesus, kurie vyko prieš 40 metų(!!!), kas man iš to? Kaip aš pritaikysiu tai dabartyje? Bet tai buvo tik pirminis ir klaidingas įspūdis. Skaitant toliau viskas pradėjo dėliotis į vietas ir aiškėti, kam buvo pasakojama apie tuos visus oldskūlinius skaičiavimo mašinų programavimo procesus.  
 Būtent remiantis tais procesais ir analizuojama kokiem tikslam pasiekti kas yra daroma. Kam reikalinga dokumentacija ir manualai, kokią svarbą turi jų revizijos, sistemos versijos, kiek laiko užtrunka testai ir kodėl pats kodo rašymas nėra didžioji programuotojo darbo dalis ir visi kiti kasdieniai software developmento procesai.  
 Kalbama apie tai, ne kaip statyti projektus (ruošiant tam tvirtus pamatus ir pan.), o kaip juos reikia tiesiog auginti ir galiausiai prieinama prie "Incremental build" modelio, kas yra vienas iš pagrindų, dabar visų labai mylimo ir beveik švento žodžio, AGILE projektų valdymo metodologijai.  
+Visų pateikiamų tezių neperrašinėsiu, jas galite paskaitinėti [The Mythical Man-Month @ WIKI](http://en.wikipedia.org/wiki/The_Mythical_Man-Month#The_mythical_man-month).
 
 ## Mintys
 Nors ir knyga nieko naujo nepapasakojo, bet skaitant vistiek kilo daug minčių. Pagrindinė - kodėl aš jos neskaičiau prieš 5 metus? Ar išvis tik pradėjęs programuot? Kaip galėjau pradėt programuot nesuvokdamas visų procesų? Neteisingai vertindamas kiekvieno proceso svarbą? Kiek laiko sugaišau vien dėl nežinojimo. Bet kita vertus - galbūt nesusidūręs su pačiais procesais ir nebūčiau supratęs apie ką šnekama knygoje. Juolab, kad pradėjus programuot visos mintys koncentruojasi į patį programavimą ir jei kas pasiūlytų knygą apie "projektų valdymą", turbūt keistai pasirodytų.  
 Bet gyvenam ir mokomės.  
 
 
+
 ## Rekomenduoju!
 Labai rekomenduoju šią knygą bet kuriam programuotojui, ypač tiem, kurie labai nepatenkinti savo projektų vadovais. O projektų vadovam (tiem, lietuviškų kepyklų) - tai turėtų būti viena pirmųjų knygų prieš pradedant išvis dirbti, o gal net prieš kišant nosį į IT.  
-
-
-
 
