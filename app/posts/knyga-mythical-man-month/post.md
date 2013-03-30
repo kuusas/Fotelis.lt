@@ -27,4 +27,4 @@ Bet gyvenam ir mokomės.
 
 ## Rekomenduoju!
 Labai rekomenduoju šią knygą bet kuriam programuotojui, ypač tiem, kurie labai nepatenkinti savo projektų vadovais. O projektų vadovam (tiem, lietuviškų kepyklų) - tai turėtų būti viena pirmųjų knygų prieš pradedant išvis dirbti, o gal net prieš kišant nosį į IT.  
-
+Esminis dalykas kodėl rekomenduoju, nes ši knyga yra kaip biblija visom IT projektų valdymo knygom. Daug knygų, net ir dabar leidžiamų, cituoja ir remiasi šioje knygoje dėstomais principais.
