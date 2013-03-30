@@ -184,25 +184,6 @@ $app->get('/comment/list/{categorySlug}/{postSlug}', function($categorySlug, $po
     ));
 });
 
-// add comment
-// $app->match('/comment/add/{categorySlug}/{postSlug}', function($categorySlug, $postSlug) use ($app){
-//     $request = $app['request'];
-
-//     $post = $app['armchair.post']->get($postSlug);
-//     if (!$post) {
-//         throw new Exception('Post does not exist');
-//     }
-
-//     $form = $app['armchair.comment.form']->getForm($postSlug);
-
-//     return $app['twig']->render('comment_add.html', array(
-//         'form' => $form->createView(),
-//         'postSlug' => $postSlug,
-//         'categorySlug' => $categorySlug,
-//     ));
-// });
-
-
 // blog entry
 $app->match('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) use ($app) {
     $service = $app['armchair.post'];
@@ -234,7 +215,7 @@ $app->match('/{categorySlug}/{postSlug}', function ($categorySlug, $postSlug) us
 $app->get('/{categorySlug}', function ($categorySlug) use ($app) {
     $service = $app['armchair.post'];
 
-    return $app['twig']->render('index.html', array(
+    return $app['twig']->render('category.html', array(
         'categorySlug' => $categorySlug,
         'postSlug' => 'none',
         'pageSlug' => 'none',

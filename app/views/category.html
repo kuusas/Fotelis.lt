@@ -10,15 +10,6 @@
 
 {% block content %}
 
-<div class="hero-unit">
-    <h1>Labàdiena developeriai,</h1>
-    <p>Būkite pasveikinti dar vieno blogo lietuviškame internete. <br>
-        Šį kartą - visiems, kas susijęs su web developinimu.<br>
-        <b>Mėgaukitės!</b>
-    </p>
-    <p><a href="/apie" class="btn btn-primary btn-large">Sužinok daugiau &raquo;</a></p>
-</div>
-
 {{ render(app.request.baseUrl ~ '/list/' ~ categorySlug ) }}
 
 {% endblock %}
