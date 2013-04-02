@@ -5259,6 +5259,11 @@ body {
 pre {
   width: 95%;
 }
+h1,
+h2,
+h3 {
+  line-height: 36.4px;
+}
 .navbar {
   -webkit-box-shadow: 0 0 10px #cbcbc4;
   -moz-box-shadow: 0 0 10px #cbcbc4;
