@@ -41,6 +41,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>http://www.fotelis.lt/symfony2/estinamigrationbundle-duomenu-bazes-migracijos</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>http://www.fotelis.lt/knyga/knyga-mythical-man-month</loc>
     <priority>0.80</priority>
   </url>
