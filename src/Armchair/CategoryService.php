@@ -39,6 +39,11 @@ class CategoryService
                 'url' => $this->request->getBaseUrl() . '/knyga',
             ),
             array(
+                'name' => 'Projektų valdymas',
+                'slug' => 'projektu-valdymas',
+                'url' => $this->request->getBaseUrl() . '/projektu-valdymas',
+            ),
+            array(
                 'name' => 'Bendrai',
                 'slug' => 'bendrai',
                 'url' => $this->request->getBaseUrl() . '/bendrai',

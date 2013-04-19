@@ -5264,6 +5264,10 @@ h2,
 h3 {
   line-height: 36.4px;
 }
+h2,
+h3 {
+  padding-top: 20px;
+}
 .navbar {
   -webkit-box-shadow: 0 0 10px #cbcbc4;
   -moz-box-shadow: 0 0 10px #cbcbc4;
