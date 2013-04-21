@@ -38,8 +38,8 @@ Priklausomai nuo vietos - elektra būtų pasirūpinta, vistik kaip be kompo. Dė
 
 <p><strong>Laikas.</strong> Galvojam apie rugpjūčio mėnesio antrą pusę ir reikėtų bandyt suderint, kad nebūtų tuo metu jokių festivalių.</p>
 
-<p><strong>Organizavimas.</strong> Konferencija savaime nenutiks - reikia organizuoti. Kas tuo apsiimtų? Tai tikrai ne vieno žmogaus darbas. Smagu būtų padaryti cummunity-based organizavimą, bet kol neturim jokios IT bendruomenės, tai neaišku ko galima tikėtis, tad bandom burti iniciatyvių žmonių grupę, kurie norėtų prisidėti prie tokio renginio organizavimo. Aš prisidedu! Nori prisidėti? Prisijunk prie google group:</p>
+<p><strong>Organizavimas.</strong> Konferencija savaime nenutiks - reikia organizuoti. Kas tuo apsiimtų? Tai tikrai ne vieno žmogaus darbas. Smagu būtų padaryti cummunity-based organizavimą, bet kol neturim jokios IT bendruomenės, tai neaišku ko galima tikėtis, tad bandom burti iniciatyvių žmonių grupę, kurie norėtų prisidėti prie tokio renginio organizavimo.</p>
 
-<ul>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/no-trolls-allowed">No Trolls Allowed</a></li>
-</ul>
+<h2>Aš prisidedu! Nori prisidėti?</h2>
+
+<h3>Prisijunk prie google group - <a href="https://groups.google.com/forum/?fromgroups#!forum/no-trolls-allowed">No Trolls Allowed</a></h3>
