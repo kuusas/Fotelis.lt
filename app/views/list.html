@@ -4,7 +4,7 @@
         <a href="{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}" title="{{ item.name }}">
             {{ item.name }}
         </a> 
-        <small class="pull-right">{{ item.date }}</small>
+        <small class="pull-right">{{ item.date }}  <span>autorius <a href="{{ app.request.baseUrl ~ '/autoriai/' ~ item.author}}">{{ item.author }}</a></span></small>
     </h2>
     <p>{{ item.shortText }}</p>
 </div><!--/row-->

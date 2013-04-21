@@ -156,6 +156,16 @@ $app->get('/kontaktai', function() use ($app){
 
 $app->get('/autoriai', function() use ($app){
     return $app['twig']->render('static/autoriai.html', array(
+        'author' => '',
+        'categorySlug' => 'none',
+        'postSlug' => 'none',
+        'pageSlug' => 'autoriai',
+    ));
+});
+
+$app->get('/autoriai/{author}', function($author) use ($app){
+    return $app['twig']->render('static/autoriai.html', array(
+        'author' => $author,
         'categorySlug' => 'none',
         'postSlug' => 'none',
         'pageSlug' => 'autoriai',

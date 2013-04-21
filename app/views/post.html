@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="row-fluid blog-post">
-        <h1>{{ post.name }}<small class="pull-right">{{ post.date }}</small></h1>
+        <h1>{{ post.name }}<small class="pull-right">{{ post.date }}  <span>autorius <a href="{{ app.request.baseUrl ~ '/autoriai/' ~ post.author}}">{{ post.author }}</a></span></small></h1>
     
         {{ post.content | raw }}
     </div>

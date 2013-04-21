@@ -5268,6 +5268,13 @@ h2,
 h3 {
   padding-top: 20px;
 }
+h1 small span,
+h2 small span {
+  color: #ea7f5f;
+  font-size: 11.9px;
+  display: block;
+  padding-top: 5px;
+}
 .navbar {
   -webkit-box-shadow: 0 0 10px #cbcbc4;
   -moz-box-shadow: 0 0 10px #cbcbc4;

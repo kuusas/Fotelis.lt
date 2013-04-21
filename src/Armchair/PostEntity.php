@@ -32,6 +32,11 @@ class PostEntity
         $this->shortText = $metadata['shortText'];
     }
 
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
     public function getDate()
     {
         return $this->date;
