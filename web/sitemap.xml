@@ -41,6 +41,14 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>http://www.fotelis.lt/symfony2/reikia-it-pros-konferencijos-lietuvoje</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://www.fotelis.lt/symfony2/projektu-valdymas-ir-irankiai</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>http://www.fotelis.lt/symfony2/estinamigrationbundle-duomenu-bazes-migracijos</loc>
     <priority>0.80</priority>
   </url>
