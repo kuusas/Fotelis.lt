@@ -79,7 +79,7 @@ tesiog nenaudoti šios naujos komandos ir tuo pačiu išmesti</p>
 be jo composer'is neatnaujins Symfony 2.3.</p>
 
 <p>Jei serveriai yra linux/mac aplinkoje tai nesukelia per daug problemų, tiesiog reikia susiinstalioti <code>libicu</code> ir <code>libicu-devel</code> bibliotekas,
-o tada <code>php_intl</code> arba pasinaudojus paketų manager'iais kaip <code>yum</code>, <code>pacman,</code>apt-get<code>, arba</code>pecl install intl<code>, arba tesiog perkompiliuojant php su</code>--enable-intl` nuoroda.</p>
+o tada <code>php_intl</code> arba pasinaudojus paketų manager'iais kaip <code>yum</code>, <code>pacman</code>, <code>apt-get</code>, arba <code>pecl install intl</code>, arba tesiog perkompiliuojant php su <code>--enable-intl</code> nuoroda.</p>
 
 <p>Tūrėjau problemų su CentOS 5. Pagal nutylėjimą libicu yra tik 3.6 versijos, Symfony reikalauja mažiausiai 3.8 arba 4.2. Taigi atnaujintą versiją turėjau pasiimti iš <code>remi-test</code> CentOs repozitorijos, ir php-intl susiinstalioti pecl pagalba.</p>
 

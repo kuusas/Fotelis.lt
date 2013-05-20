@@ -73,7 +73,7 @@ Symfony 2.3 su savim tuo pačiu diegia ir symfony/icu bundle'ą, šiam reikaling
 be jo composer'is neatnaujins Symfony 2.3. 
 
 Jei serveriai yra linux/mac aplinkoje tai nesukelia per daug problemų, tiesiog reikia susiinstalioti `libicu` ir `libicu-devel` bibliotekas,
-o tada `php_intl` arba pasinaudojus paketų manager'iais kaip `yum`, `pacman, `apt-get`, arba `pecl install intl`, arba tesiog perkompiliuojant php su `--enable-intl` nuoroda.
+o tada `php_intl` arba pasinaudojus paketų manager'iais kaip `yum`, `pacman`, `apt-get`, arba `pecl install intl`, arba tesiog perkompiliuojant php su `--enable-intl` nuoroda.
 
 Tūrėjau problemų su CentOS 5. Pagal nutylėjimą libicu yra tik 3.6 versijos, Symfony reikalauja mažiausiai 3.8 arba 4.2. Taigi atnaujintą versiją turėjau pasiimti iš `remi-test` CentOs repozitorijos, ir php-intl susiinstalioti pecl pagalba.
 
