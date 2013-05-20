@@ -1,7 +1,7 @@
 ﻿Štai ir pasirodė pirmasis Symfony 2.3 release kandidatas, apie atnaujinimo procesą čia ir pasistengsiu parašyti.
 Primenu, kad Symfony 2.3 bus pirmoji versija, kuri turės ilgalaikį palaikymą (LTS - long term support). Į tai atsižvelgiant tikrai verta atsinaujinti savo projektus jau dabar.
 
-Pradėsiu nuo `composer.json` failo, kaip ir rekomenduojama "requireramentus" reikėtų imti iš [Symfony2 standart edition repositorijos](https://github.com/symfony/symfony-standard).
+Pradėsiu nuo `composer.json` failo, kaip ir rekomenduojama "requireramentus" reikėtų imti iš [Symfony2 standart edition repozitorijos](https://github.com/symfony/symfony-standard).
 Pasirinkus tagą: v2.3.0-RC1 galima pradėti žiurėti į 'composer.json':
 
 Requiramentai:
