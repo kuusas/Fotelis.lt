@@ -3,3 +3,4 @@ composer.phar
 composer.lock
 app/config/dev_*.php
 app/config/prod*.php
+sftp-config.json
