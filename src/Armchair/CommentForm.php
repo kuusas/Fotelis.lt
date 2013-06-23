@@ -54,7 +54,7 @@ class CommentForm
                     $this->session->set('flash', array(
                         'type' => 'success',
                         'title' => 'Ačiū!',
-                        'message' => 'Jūsų komentaras paskelbtas.',
+                        'message' => 'Jūsų komentaras išsaugotas, netrukus administratorius patvirtins.',
                     ));
                 } else {
                     $this->session->set('flash', array(

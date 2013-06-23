@@ -8,12 +8,16 @@ return array(
         'password'  => '',
         'charset'   => 'utf8'
     ),
-    'swiftmailer.options' = array(
+    'swiftmailer.options' => array(
         'host' => 'host',
         'port' => '25',
         'username' => 'username',
         'password' => 'password',
         'encryption' => null,
         'auth_mode' => null
+    ),
+    'armchair.notification.options' => array(
+        'to' => 'zilvinas@kuusas.lt',
+        'from' => 'noreply@fotelis.lt',
     ),
 );

@@ -6,6 +6,9 @@ use PDO;
 
 class CommentModel
 {
+    const SALT_START = 'pasūdytas';
+    const SALT_END = 'papipirintas';
+
     protected $conn;
 
     public function __construct(Connection $conn) 
@@ -13,9 +16,24 @@ class CommentModel
         $this->conn = $conn;
     }
 
+    public function getCommentHash(array $data)
+    {
+        return md5(self::SALT_START . sha1($data['id']) . self::SALT_END);
+    }
+
+    public function getByHash($hash)
+    {
+        $query = "SELECT * FROM `comment` WHERE MD5(CONCAT('" . self::SALT_START . "', SHA1(id), '" . self::SALT_END . "')) = :hash";
+        $statement = $this->conn->executeQuery($query, array(
+            'hash' => $hash
+        ));
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function getAllByReference($reference)
     {
-        $query = "SELECT * FROM `comment` WHERE reference = :reference ORDER BY date_created ASC";
+        $query = "SELECT * FROM `comment` WHERE reference = :reference AND status='active' ORDER BY date_created ASC";
         $statement = $this->conn->executeQuery($query, array(
             'reference' => $reference
         ));

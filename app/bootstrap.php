@@ -4,11 +4,14 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use emberlabs\gravatarlib\Gravatar;
 $app = new Silex\Application();
 if (strstr(SILEX_ENV, 'dev')) {
     $app['debug'] = true;
 }
+
+$config = require(__DIR__ . '/config/' . SILEX_ENV . '.php');
 
 // services
 $app->register(new Silex\Provider\SessionServiceProvider());
@@ -16,12 +19,15 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => require(__DIR__ . '/config/' . SILEX_ENV . '.php'),
+    'db.options' => $config['db.options'],
 ));
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.messages' => array(),
+));
+$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+     'swiftmailer.options' => $config['swiftmailer.options']
 ));
 
 $app['twig']->addGlobal('gravatar', new Gravatar());
@@ -41,6 +47,15 @@ $app['armchair.post'] = $app->share(function() {
     ));
     return $obj;
 });
+
+$app['armchair.notification'] = $app->share(function() use ($app, $config) {
+    $obj = new Armchair\NotificationService($app['armchair.post'], 
+        $app['mailer'], 
+        $app['twig'],
+        $config['armchair.notification.options']);
+    return $obj;
+});
+
 $app['armchair.category'] = $app->share(function() use ($app) {
     $obj = new Armchair\CategoryService($app['request']);
     return $obj;
@@ -52,7 +67,7 @@ $app['armchair.comment.model'] = $app->share(function() use ($app) {
 });
 
 $app['armchair.comment'] = $app->share(function() use ($app) {
-    $obj = new Armchair\CommentService($app['armchair.comment.model']);
+    $obj = new Armchair\CommentService($app['armchair.comment.model'], $app['armchair.notification']);
     return $obj;
 });
 
@@ -192,6 +207,28 @@ $app->get('/comment/list/{categorySlug}/{postSlug}', function($categorySlug, $po
     return $app['twig']->render('comment_list.html', array(
         'data' => $data,
     ));
+});
+
+// comments activation 
+$app->get('/comment/activate/{hash}', function($hash) use ($app){
+    $res = $app['armchair.comment']->activate($hash);
+
+    if (!$res) {
+        return new Response('Comment not found', 404);
+    }
+
+    return new Response(sprintf('Comment %s activated!', $res['id']), 201);
+});
+
+// comments trashing
+$app->get('/comment/trash/{hash}', function($hash) use ($app){
+    $res = $app['armchair.comment']->trash($hash);
+
+    if (!$res) {
+        return new Response('Comment not found', 404);
+    }
+
+    return new Response(sprintf('Comment %s trashed!', $res['id']), 201);
 });
 
 // blog entry
