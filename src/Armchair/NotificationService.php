@@ -29,7 +29,7 @@ class NotificationService
         ));
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('Fotelis.lt new comment')
+            ->setSubject('Fotelis new comment')
             ->setFrom($this->options['from'])
             ->setTo($this->options['to'])
             ->setBody($body, 'text/html');

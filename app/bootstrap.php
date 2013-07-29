@@ -1,6 +1,5 @@
 <?php
 // web/index.php
-
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +28,8 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
 $app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
      'swiftmailer.options' => $config['swiftmailer.options']
 ));
+
+// $app['swiftmailer.transport'] = new \Swift_Transport_MailTransport(new \Swift_Transport_SimpleMailInvoker(), $app['swiftmailer.transport.eventdispatcher']);
 
 $app['twig']->addGlobal('gravatar', new Gravatar());
 $app->before(function() use ($app) {
