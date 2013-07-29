@@ -1,6 +1,6 @@
 <p><img src="/media/posts/no-trolls-allowed-2013/troll.png" alt="No Trolls Allowed"></p>
 
-<p>Norėčiau ir aš pasidalinti įspūdžiais į No Trolls Allowed renginuko!</p>
+<p>Norėčiau ir aš pasidalinti įspūdžiais iš No Trolls Allowed renginuko!</p>
 
 <p>Nors praėjo jau savaitė - įspūdžiai dar neišblėso. Vis dar esu sužavėtas, kad pavyko suorganizuoti ir visu tuo kas įvyko, ir kaip pavyko.</p>
 
