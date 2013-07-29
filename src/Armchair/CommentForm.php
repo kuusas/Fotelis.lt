@@ -41,6 +41,12 @@ class CommentForm
             ->add('comment', 'textarea', array(
                 'constraints' => array(new Assert\NotBlank())
             ))
+            ->add('security', 'text', array(
+                'constraints' => array(
+                    new Assert\NotBlank(),
+                    new Assert\Range(array('min' => 4, 'max' => 4)),
+                )
+            ))
             ->getForm();
 
         if ('POST' == $this->request->getMethod()) {
@@ -49,6 +55,8 @@ class CommentForm
             if ($form->isValid()) {
                 $data = $form->getData();
                 $this->isSuccess = true;
+                
+                unset($data['security']);
 
                 if ($this->comment->insert($data)) {
                     $this->session->set('flash', array(

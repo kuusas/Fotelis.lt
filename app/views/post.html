@@ -44,6 +44,12 @@
                     {{ form_widget(form.comment) }}
                 </div>
 
+                <div class="row-fluid">
+                    {{ form_label(form.security, 'Du kart du (skaičius)' ) }}
+                    {{ form_errors(form.security) }}
+                    {{ form_widget(form.security) }}
+                </div>
+
                 {{ form_rest(form) }}
                 <input type="submit" name="submit" value="Komentuoti" class="btn btn-large btn-primary" />
             </fieldset>
