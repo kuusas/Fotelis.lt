@@ -10,7 +10,7 @@
         <item>
             <title>{{ item.name }}</title>
             <description>{{ item.shortText }}</description>
-            <link>{{ app.request.baseUrl ~ '/' ~ item.category ~ '/' ~ item.slug}}</link>
+            <link>{{ app.request.schemeAndHttpHost ~ '/' ~ item.category ~ '/' ~ item.slug}}</link>
             <guid>{{ item.slug }}</guid>
             <pubDate>{{ item.dateRss }}</pubDate>
         </item>
